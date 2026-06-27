@@ -84,6 +84,19 @@ public class LinkedList {
         temp.next = null ;
         length-- ;
     }
+    void middleOfNode(){
+        System.out.println("Finding middle of Node");
+        Node temp = head;
+        Node slow = temp;
+        Node fast = temp ;
+        while(fast != null && fast.next != null){
+            slow = slow.next ;
+            fast = fast.next.next ;
+        }
+
+        System.out.println("Middle is " + slow.value);
+
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList(1);
@@ -91,9 +104,10 @@ public class LinkedList {
             ll.append(i);
         }
         ll.addFirst(0);
-        ll.removeLast();
+//        ll.removeLast();
         ll.removeFirst();
         ll.printDetails();
+        ll.middleOfNode();
     }
 
 }
